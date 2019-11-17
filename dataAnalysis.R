@@ -1,5 +1,5 @@
 library("readxl")
-setwd("C:/Users/joshj/Documents/R/r-files")
+setwd('~/Desktop/IT_Oxygen')
 
 name <- "Product 6"
 nameSpot <- "Product 6 Spot Price"
@@ -55,3 +55,46 @@ lines(date_Spot, avg_Spot, col = "red")
 legend("topleft", legend = c( "Contract Price", "Spot Price"), col = c("blue", "red"), lty = 1:2, cex = .8)
 grid()
 #title = nameSpot ~ " and " ~ nameContract ~ " Average Price"
+
+
+#PRODUCT 9#
+
+product9.CP<- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product9_ContractPrice_flash_4Gb_512Mx8_SLC.xlsx')
+product9.SP <- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product9_flash_spotPrice_SLC_4gig_512MBx8.xlsx')
+
+plot(product9.CP$Date,product9.CP$Avg , type = "l", col = "blue")
+
+name <- "Product 9"
+plot(product9.CP$Date,product9.CP$Avg , main = name, ylab = "Average", xlab = "Date", type = "l", col = "blue", ylim = c(1, 4))
+lines(product9.SP$Date,product9.SP$Avg , col = "red")
+legend("topleft", legend = c( "Contract Price", "Spot Price"), col = c("blue", "red"), lty = 1:2, cex = .8)
+grid()
+
+#Product 10#
+
+product10.CP <- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product10_ContractPrice_flash_64Gb_8Gx8_MLC.xlsx')
+product10.SP <- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product10_flash_spotPrice_MLC_64gig_8GBx8.xlsx')
+
+plot(product10.CP$Date,product10.CP$Avg , type = "l", col = "blue")
+
+name <- "Product 10"
+plot(product10.CP$Date,product10.CP$Avg , main = name, ylab = "Average", xlab = "Date", type = "l", col = "blue", ylim = c(1, 6))
+lines(product10.SP$Date,product10.SP$Avg , col = "red")
+legend("topleft", legend = c( "Contract Price", "Spot Price"), col = c("blue", "red"), lty = 1:2, cex = .8)
+grid()
+
+#Product 11#
+product11.CP <- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product11_ContractPrice_flash_8Gb_1024Mx8_SLC.xlsx')
+product11.SP <- read_xlsx('/Users/lydiasavatsky/Desktop/IT_Oxygen/Product_Data/product11_flash_spotPrice_SLC_8gig_1GBx8.xlsx')
+
+plot(product11.CP$Date,product11.CP$Avg , type = "l", col = "blue")
+plot(product11.SP$Date, product11.SP$Avg , type = "l", col="red")
+
+name <- "Product 11"
+plot(product11.CP$Date,product11.CP$Avg , main = name, ylab = "Average", xlab = "Date", type = "l", col = "blue", ylim = c(3, 9))
+lines(product11.SP$Date,product11.SP$Avg , col = "red")
+legend("topleft", legend = c( "Contract Price", "Spot Price"), col = c("blue", "red"), lty = 1:2, cex = .8)
+grid()
+
+
+
